@@ -12,9 +12,12 @@ namespace PacMan
 {
     public partial class Bienvenida : Form
     {
+       
+        
         public Bienvenida()
         {
             InitializeComponent();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,6 +33,9 @@ namespace PacMan
             try
             {
                 Datos.AddUser(newUser, users);
+                
+                Form1 juego = new Form1();
+                juego.Show();
                 
             }
             catch (Exception)

@@ -45,7 +45,7 @@ namespace PacMan
             {
                 user = BuscarUser(user, users);
                 MessageBox.Show("Ha ingresado exitosamente");
-                ;            }
+            }
         }
         public static void SerializarUsers(List<User> users)
         {
