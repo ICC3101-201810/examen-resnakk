@@ -34,17 +34,17 @@ namespace PacMan
             }
             return null;
         }
-        public static void AddUser(User user, List<User> users)
+        public static User AddUser(User user, List<User> users)
         {
             if (VerUser(user,users) == true)
             {
                 users.Add(user);
-                MessageBox.Show("Ha ingresado exitosamente");
+                return user;
             }
             else
             {
                 user = BuscarUser(user, users);
-                MessageBox.Show("Ha ingresado exitosamente");
+                return user;
             }
         }
         public static void SerializarUsers(List<User> users)
@@ -83,5 +83,17 @@ namespace PacMan
                 return null;
             }
         }
+        public static void ReplaceUser(User user, List<User> users)
+        {
+            foreach (User item in users)
+            {
+                if (user.Get_Nombre() == item.Get_Nombre())
+                {
+                    item.set_score(user.Get_score());
+                }
+            }
+            
+        }
+        
     }
 }

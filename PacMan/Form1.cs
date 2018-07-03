@@ -24,12 +24,16 @@ namespace PacMan
         int speedF1 = 8;
         int speedF2 = 8;
 
-        int score = 0;
+        
         User user;
+        int score;
+        
+        
         public Form1(string n, int s)
         {
             InitializeComponent();
             user = new User(n, s);
+            score = s;
             Pacman.Left = 358;
             Pacman.Top = 229;
             Random ran = new Random();
@@ -144,6 +148,7 @@ namespace PacMan
                 Random ran = new Random();
                 Cherry.Left = ran.Next(11, 700);
                 Cherry.Top = ran.Next(11, 380);
+                
                 score += 10;
             }
             if (Pacman.Bounds.IntersectsWith(Tile.Bounds))
@@ -158,14 +163,26 @@ namespace PacMan
         private void BReiniciar_Click(object sender, EventArgs e)
         {
             this.Close();
+            List<User> users = Datos.DesUsers();
+            user.set_score(score);
+            Datos.ReplaceUser(user, users);
+            Datos.SerializarUsers(users);
             Form1 f = new Form1(user.Get_Nombre(),user.Get_score());
             f.Show();
         }
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            
+            List<User> users = Datos.DesUsers();
+            user.set_score(score);
+            Datos.ReplaceUser(user, users);
+            Datos.SerializarUsers(users);
             Application.Exit();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

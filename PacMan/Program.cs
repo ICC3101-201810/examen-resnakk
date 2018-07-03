@@ -15,7 +15,7 @@ namespace PacMan
         [STAThread]
         static void Main()
         {
-            Datos.SerializarUsers(Datos.users);
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Bienvenida());

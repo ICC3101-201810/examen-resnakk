@@ -19,6 +19,11 @@ namespace PacMan
         }
         public string Get_Nombre() { return nombre; }
         public int Get_score() { return score; }
+        public void set_score(int s)
+        {
+            score = s;
+        }
+        
         
     }
 }
