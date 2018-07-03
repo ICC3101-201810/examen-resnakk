@@ -59,7 +59,7 @@
             // 
             this.FRojo.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.FRojo.Image = global::PacMan.Properties.Resources.red_left1;
-            this.FRojo.Location = new System.Drawing.Point(229, 76);
+            this.FRojo.Location = new System.Drawing.Point(218, 446);
             this.FRojo.Name = "FRojo";
             this.FRojo.Size = new System.Drawing.Size(36, 38);
             this.FRojo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -71,7 +71,7 @@
             // 
             this.FRosado.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.FRosado.Image = global::PacMan.Properties.Resources.pink_left1;
-            this.FRosado.Location = new System.Drawing.Point(513, 417);
+            this.FRosado.Location = new System.Drawing.Point(260, 446);
             this.FRosado.Name = "FRosado";
             this.FRosado.Size = new System.Drawing.Size(36, 38);
             this.FRosado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -95,7 +95,7 @@
             // 
             this.Tile.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Tile.Image = global::PacMan.Properties.Resources.tile114;
-            this.Tile.Location = new System.Drawing.Point(295, 169);
+            this.Tile.Location = new System.Drawing.Point(302, 464);
             this.Tile.Name = "Tile";
             this.Tile.Size = new System.Drawing.Size(20, 20);
             this.Tile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,7 +107,7 @@
             // 
             this.Cherry.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Cherry.Image = global::PacMan.Properties.Resources.cherry;
-            this.Cherry.Location = new System.Drawing.Point(378, 156);
+            this.Cherry.Location = new System.Drawing.Point(328, 464);
             this.Cherry.Name = "Cherry";
             this.Cherry.Size = new System.Drawing.Size(20, 20);
             this.Cherry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

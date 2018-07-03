@@ -25,10 +25,11 @@ namespace PacMan
         int speedF2 = 8;
 
         int score = 0;
-        
-        public Form1()
+        User user;
+        public Form1(string n, int s)
         {
             InitializeComponent();
+            user = new User(n, s);
             Pacman.Left = 358;
             Pacman.Top = 229;
             Random ran = new Random();
@@ -37,6 +38,10 @@ namespace PacMan
             FRojo.Top = ran.Next(11, 380);
             FRosado.Left = ran.Next(11, 700);
             FRosado.Top = ran.Next(11, 380);
+            Cherry.Left = ran.Next(11, 700);
+            Cherry.Top = ran.Next(11, 380);
+            Tile.Left = ran.Next(11, 700);
+            Tile.Top = ran.Next(11, 380);
         }
 
         private void KeyisUp(object sender, KeyEventArgs e)
@@ -90,6 +95,7 @@ namespace PacMan
         private void timer1_Tick(object sender, EventArgs e)
         {
             LScore.Text = "Score: " + score.ToString();
+            LNombre.Text = "Nombre: " + user.Get_Nombre();
             if (left)
             {
                 Pacman.Left -= speedp;
@@ -116,25 +122,43 @@ namespace PacMan
             else if (FRosado.Bounds.IntersectsWith(wall1.Bounds)|| FRosado.Bounds.IntersectsWith(wall2.Bounds)|| FRosado.Bounds.IntersectsWith(wall3.Bounds)||FRosado.Bounds.IntersectsWith(wall4.Bounds))
             {
                 speedF2 = -speedF2;
-            }
 
+            }
+            if (Pacman.Bounds.IntersectsWith(wall1.Bounds) || Pacman.Bounds.IntersectsWith(wall2.Bounds) || Pacman.Bounds.IntersectsWith(wall3.Bounds) || Pacman.Bounds.IntersectsWith(wall4.Bounds))
+            {
+                speedp = -speedp;
+                
+            }
+           
             if (Pacman.Bounds.IntersectsWith(FRojo.Bounds) || Pacman.Bounds.IntersectsWith(FRosado.Bounds))
             {
-                Pacman.Left = 0;
-                Pacman.Top = 25;
+                Pacman.Left = 358;
+                Pacman.Top = 229;
                 LGO.Visible = true;
                 BReiniciar.Visible = true;
                 Exit.Visible = true;
-                timer1.Stop();
-                
+                timer1.Stop();   
             }
-
+            if (Pacman.Bounds.IntersectsWith(Cherry.Bounds) )
+            {
+                Random ran = new Random();
+                Cherry.Left = ran.Next(11, 700);
+                Cherry.Top = ran.Next(11, 380);
+                score += 10;
+            }
+            if (Pacman.Bounds.IntersectsWith(Tile.Bounds))
+            {
+                Random ran = new Random();
+                Tile.Left = ran.Next(11, 700);
+                Tile.Top = ran.Next(11, 380);
+                score += 15;
+            }
         }
 
         private void BReiniciar_Click(object sender, EventArgs e)
         {
             this.Close();
-            Form1 f = new Form1();
+            Form1 f = new Form1(user.Get_Nombre(),user.Get_score());
             f.Show();
         }
 

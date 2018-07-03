@@ -34,7 +34,7 @@ namespace PacMan
             {
                 Datos.AddUser(newUser, users);
                 
-                Form1 juego = new Form1();
+                Form1 juego = new Form1(newUser.Get_Nombre(),newUser.Get_score());
                 juego.Show();
                 
             }
